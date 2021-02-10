@@ -50,65 +50,64 @@ for index, row in dfCustomer.iterrows():
     #
     #     b2wRegister(cnpj, loginEmail, customerName, customerCpf, customerPhone, customerPosition, site, mei, registrationState)
 
-    # # check Magazine Luiza
-    # if row['Magazine Luiza'] == 'Pronto para iniciar cadastro':
-    #     displayName = row['Nome Fantasia']
-    #     platform = row['Plataforma']
-    #     cnpj = row['CNPJ']
-    #     companyName = row['Razão Social']
-    #     tradeName = row['Nome Fantasia']
-    #     site = row['Site']
-    #     cep = row['CEP']
-    #
-    #     ## by standard: same name by custumer
-    #     officerCommercialName = row['Cliente Nome']
-    #     officerCommercialEmail = row['Cliente Email']
-    #     officerCommercialPhone = row['Cliente Telefone']
-    #     officerSacName = row['Cliente Nome']
-    #     officerSacEmail = row['Cliente Email']
-    #     officerSacPhone = row['Cliente Telefone']
-    #     officerFinancialName = row['Cliente Nome']
-    #     officerFinancialEmail = row['Cliente Email']
-    #     officerFinancialPhone = row['Cliente Telefone']
-    #     officerLegalName = row['Cliente Nome']
-    #     officerLegalEmail = row['Cliente Email']
-    #     officerLegalPhone = row['Cliente Telefone']
-    #     ## not required: responsavelTi = False
-    #     officerTiName = None
-    #     officerTiEmail = None
-    #     officerTiPhone = None
-    #
-    #     bank = row['Banco']
-    #     agency = row['Agencia']
-    #     agencyDigit = row['Digito Agencia']
-    #     currentAccount = row['Conta Corrente']
-    #     currentAccountDigit = row['Digito Conta Corrente']
-    #
-    #     magazineLuizaRegister(displayName, platform, cnpj, companyName, tradeName, site, cep,
-    #                           officerCommercialName, officerCommercialEmail, officerCommercialPhone,
-    #                           officerSacName, officerSacEmail, officerSacPhone,
-    #                           officerFinancialName, officerFinancialEmail, officerFinancialPhone,
-    #                           officerLegalName, officerLegalEmail, officerLegalPhone,
-    #                           officerTiName, officerTiEmail, officerTiPhone,
-    #                           bank, agency, agencyDigit, currentAccount, currentAccountDigit)
+    # check Magazine Luiza
+    if row['Magazine Luiza'] == 'Pronto para iniciar cadastro':
+        displayName = row['Nome Fantasia']
+        platform = row['Plataforma']
+        cnpj = row['CNPJ']
+        companyName = row['Razão Social']
+        tradeName = row['Nome Fantasia']
+        site = row['Site']
+        cep = row['CEP']
 
-    # if row['Carrefour'] == 'Pronto para iniciar cadastro':
-    #     cnpj = row['CNPJ']
-    #     customerFirstName = row['Cliente Nome']
-    #     customerLastName = row['Cliente Nome']
-    #     displayName = row['Nome Fantasia']
-    #     companyName = row['Razão Social']
-    #     registrationMunicipal = row['Inscrição Municipal']
-    #     registrationState = row['Inscrição Estadual']
-    #     loginEmail = row['Tribo Email']
-    #     phone = row['Cliente Telefone']
-    #     category = row['Categoria Principal']
-    #     platform = row['Plataforma']
-    #
-    #     # carrefuorRegister(cnpj, customerFirstName, customerLastName, displayName, companyName,
-    #     #                   registrationMunicipal, registrationState, category, platform, loginEmail, phone)
-    #
-    #     merdadoLivreRegister(cnpj, companyName, loginEmail)
+        ## by standard: same name by custumer
+        officerCommercialName = row['Cliente Nome']
+        officerCommercialEmail = row['Cliente Email']
+        officerCommercialPhone = row['Cliente Telefone']
+        officerSacName = row['Cliente Nome']
+        officerSacEmail = row['Cliente Email']
+        officerSacPhone = row['Cliente Telefone']
+        officerFinancialName = row['Cliente Nome']
+        officerFinancialEmail = row['Cliente Email']
+        officerFinancialPhone = row['Cliente Telefone']
+        officerLegalName = row['Cliente Nome']
+        officerLegalEmail = row['Cliente Email']
+        officerLegalPhone = row['Cliente Telefone']
+        ## not required: responsavelTi = False
+        officerTiName = None
+        officerTiEmail = None
+        officerTiPhone = None
+
+        bank = row['Banco']
+        agency = row['Agencia']
+        agencyDigit = row['Digito Agencia']
+        currentAccount = row['Conta Corrente']
+        currentAccountDigit = row['Digito Conta Corrente']
+
+        magazineLuizaRegister(displayName, platform, cnpj, companyName, tradeName, site, cep,
+                              officerCommercialName, officerCommercialEmail, officerCommercialPhone,
+                              officerSacName, officerSacEmail, officerSacPhone,
+                              officerFinancialName, officerFinancialEmail, officerFinancialPhone,
+                              officerLegalName, officerLegalEmail, officerLegalPhone,
+                              officerTiName, officerTiEmail, officerTiPhone,
+                              bank, agency, agencyDigit, currentAccount, currentAccountDigit)
+
+    if row['Carrefour'] == 'Pronto para iniciar cadastro':
+        cnpj = row['CNPJ']
+        customerFirstName = row['Cliente Nome']
+        customerLastName = row['Cliente Nome']
+        displayName = row['Nome Fantasia']
+        companyName = row['Razão Social']
+        registrationMunicipal = row['Inscrição Municipal']
+        registrationState = row['Inscrição Estadual']
+        loginEmail = row['Tribo Email']
+        phone = row['Cliente Telefone']
+        category = row['Categoria Principal']
+        platform = row['Plataforma']
+
+        # carrefuorRegister(cnpj, customerFirstName, customerLastName, displayName, companyName,
+        #                   registrationMunicipal, registrationState, category, platform, loginEmail, phone)
+
 
     if row['Mercado Livre'] == 'Pronto para iniciar cadastro':
         cnpj = row['CNPJ']
