@@ -4,3 +4,7 @@ chromedriver
 .idea
 venv
 Validação_de_Email_Marketplace
+__pycache__/
+debug.log
+rpa_python.js.tmp
+rpa_python.log
