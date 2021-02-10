@@ -7,16 +7,19 @@
 # from google sheets acess data and store in datraframe
 # call functions register
 
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
-
-import pandas as pd
-# from b2w import b2wRegister
+from b2w import b2wRegister
 from magazineLuiza import magazineLuizaRegister
 from b2w import b2wRegister
 from carrefuor import carrefuorRegister
 from mercadoLivre import merdadoLivreRegister
 from madeiraMadeira import madeiraMadeiraRegister
+from dafiti import dafitiRegister
+
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
+import pandas as pd
+
 # sheets authentication
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/spreadsheets',
          'https://www.googleapis.com/auth/drive.file', 'https://www.googleapis.com/auth/drive']
@@ -116,12 +119,22 @@ for index, row in dfCustomer.iterrows():
     #
     #     merdadoLivreRegister(cnpj, companyName, loginEmail)
 
-    if row['Madeira Madeira'] == 'Pronto para iniciar cadastro':
-        customerName = row['Cliente Nome']
-        tradeName = row['Nome Fantasia']
+    # if row['Madeira Madeira'] == 'Pronto para iniciar cadastro':
+    #     customerName = row['Cliente Nome']
+    #     tradeName = row['Nome Fantasia']
+    #     cnpj = row['CNPJ']
+    #     site = row['Site']
+    #     loginEmail = row['Tribo Email']
+    #     phone = row['Cliente Telefone']
+    #
+    #     madeiraMadeiraRegister(customerName, tradeName, cnpj, site, loginEmail, phone)
+
+    if row['Dafiti'] == 'Pronto para iniciar cadastro':
+        customerFirstName = row['Cliente Nome']
+        companyName = row['Razão Social']
         cnpj = row['CNPJ']
         site = row['Site']
         loginEmail = row['Tribo Email']
         phone = row['Cliente Telefone']
 
-        madeiraMadeiraRegister(customerName, tradeName, cnpj, site, loginEmail, phone)
+        dafitiRegister(companyName, customerFirstName, cnpj, site, loginEmail, phone)
