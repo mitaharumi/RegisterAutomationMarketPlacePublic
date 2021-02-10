@@ -153,25 +153,25 @@ def magazineLuizaRegister(displayName, platform, cnpj, companyName, tradeName, s
     buttonNext3.click()
     time.sleep(10)
 
-
-def magazineLuizaRegister(displayName, platform, cnpj, companyName, tradeName, site, cep,
-                          officerCommercialName, officerCommercialEmail, officerCommercialPhone,
-                          officerSacName, officerSacEmail, officerSacPhone,
-                          officerFinancialName, officerFinancialEmail, officerFinancialPhone,
-                          officerLegalName, officerLegalEmail, officerLegalPhone,
-                          officerTiName, officerTiEmail, officerTiPhone,
-                          bank, agency, agencyDigit, currentAccount, currentAccountDigit):
-    url = 'https://marketplace-vendamais.magazineluiza.com.br/form.html'
-    r.init()
-    r.url(url)
-
-    # input display name
-    r.type('//*[@id="00Nf100000CJDD5"]', str(displayName))
-    r.wait(2.0)
-
-    # click platform
-    r.click('//*[@id="app"]/div[1]/div[3]/div')
-    # type platform
-    r.type('//*[@id="app"]/div[1]/div[3]/div/div/div/input', platform + '[enter]')
-
-    r.wait(3.0)
+#
+# def magazineLuizaRegister(displayName, platform, cnpj, companyName, tradeName, site, cep,
+#                           officerCommercialName, officerCommercialEmail, officerCommercialPhone,
+#                           officerSacName, officerSacEmail, officerSacPhone,
+#                           officerFinancialName, officerFinancialEmail, officerFinancialPhone,
+#                           officerLegalName, officerLegalEmail, officerLegalPhone,
+#                           officerTiName, officerTiEmail, officerTiPhone,
+#                           bank, agency, agencyDigit, currentAccount, currentAccountDigit):
+#     url = 'https://marketplace-vendamais.magazineluiza.com.br/form.html'
+#     r.init()
+#     r.url(url)
+#
+#     # input display name
+#     r.type('//*[@id="00Nf100000CJDD5"]', str(displayName))
+#     r.wait(2.0)
+#
+#     # click platform
+#     r.click('//*[@id="app"]/div[1]/div[3]/div')
+#     # type platform
+#     r.type('//*[@id="app"]/div[1]/div[3]/div/div/div/input', platform + '[enter]')
+#
+#     r.wait(3.0)
