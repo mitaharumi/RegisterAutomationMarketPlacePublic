@@ -15,6 +15,7 @@ import pandas as pd
 from magazineLuiza import magazineLuizaRegister
 from b2w import b2wRegister
 from carrefuor import carrefuorRegister
+from mercadoLivre import merdadoLivreRegister
 
 # sheets authentication
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/spreadsheets',
@@ -91,18 +92,27 @@ for index, row in dfCustomer.iterrows():
     #                           officerTiName, officerTiEmail, officerTiPhone,
     #                           bank, agency, agencyDigit, currentAccount, currentAccountDigit)
 
-    if row['Carrefour'] == 'Pronto para iniciar cadastro':
-        cnpj = row['CNPJ']
-        customerFirstName = row['Cliente Nome']
-        customerLastName = row['Cliente Nome']
-        displayName = row['Nome Fantasia']
-        companyName = row['Razão Social']
-        registrationMunicipal = row['Inscrição Municipal']
-        registrationState = row['Inscrição Estadual']
-        loginEmail = row['Tribo Email']
-        phone = row['Cliente Telefone']
-        category = row['Categoria Principal']
-        platform = row['Plataforma']
+    # if row['Carrefour'] == 'Pronto para iniciar cadastro':
+    #     cnpj = row['CNPJ']
+    #     customerFirstName = row['Cliente Nome']
+    #     customerLastName = row['Cliente Nome']
+    #     displayName = row['Nome Fantasia']
+    #     companyName = row['Razão Social']
+    #     registrationMunicipal = row['Inscrição Municipal']
+    #     registrationState = row['Inscrição Estadual']
+    #     loginEmail = row['Tribo Email']
+    #     phone = row['Cliente Telefone']
+    #     category = row['Categoria Principal']
+    #     platform = row['Plataforma']
+    #
+    #     # carrefuorRegister(cnpj, customerFirstName, customerLastName, displayName, companyName,
+    #     #                   registrationMunicipal, registrationState, category, platform, loginEmail, phone)
+    #
+    #     merdadoLivreRegister(cnpj, companyName, loginEmail)
 
-        carrefuorRegister(cnpj, customerFirstName, customerLastName, displayName, companyName,
-                          registrationMunicipal, registrationState, category, platform, loginEmail, phone)
+    if row['Mercado Livre'] == 'Pronto para iniciar cadastro':
+        cnpj = row['CNPJ']
+        companyName = row['Razão Social']
+        loginEmail = row['Tribo Email']
+
+        merdadoLivreRegister(cnpj, companyName, loginEmail)
