@@ -14,6 +14,7 @@ from carrefuor import carrefuorRegister
 from mercadoLivre import merdadoLivreRegister
 from madeiraMadeira import madeiraMadeiraRegister
 from dafiti import dafitiRegister
+from netshoes import netshoesRegister
 
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
@@ -52,49 +53,49 @@ for index, row in dfCustomer.iterrows():
     #     registrationState = row['Inscrição Estadual']
     #
     #     b2wRegister(cnpj, loginEmail, customerName, customerCpf, customerPhone, customerPosition, site, mei, registrationState)
-    #
-    # # check Magazine Luiza
-    # if row['Magazine Luiza'] == 'Pronto para iniciar cadastro':
-    #     displayName = row['Nome Fantasia']
-    #     platform = row['Plataforma']
-    #     cnpj = row['CNPJ']
-    #     companyName = row['Razão Social']
-    #     tradeName = row['Nome Fantasia']
-    #     site = row['Site']
-    #     cep = row['CEP']
-    #
-    #     ## by standard: same name by custumer
-    #     officerCommercialName = row['Cliente Nome']
-    #     officerCommercialEmail = row['Cliente Email']
-    #     officerCommercialPhone = row['Cliente Telefone']
-    #     officerSacName = row['Cliente Nome']
-    #     officerSacEmail = row['Cliente Email']
-    #     officerSacPhone = row['Cliente Telefone']
-    #     officerFinancialName = row['Cliente Nome']
-    #     officerFinancialEmail = row['Cliente Email']
-    #     officerFinancialPhone = row['Cliente Telefone']
-    #     officerLegalName = row['Cliente Nome']
-    #     officerLegalEmail = row['Cliente Email']
-    #     officerLegalPhone = row['Cliente Telefone']
-    #     ## not required: responsavelTi = False
-    #     officerTiName = None
-    #     officerTiEmail = None
-    #     officerTiPhone = None
-    #
-    #     bank = row['Banco']
-    #     agency = row['Agencia']
-    #     agencyDigit = row['Digito Agencia']
-    #     currentAccount = row['Conta Corrente']
-    #     currentAccountDigit = row['Digito Conta Corrente']
-    #
-    #     magazineLuizaRegister(displayName, platform, cnpj, companyName, tradeName, site, cep,
-    #                           officerCommercialName, officerCommercialEmail, officerCommercialPhone,
-    #                           officerSacName, officerSacEmail, officerSacPhone,
-    #                           officerFinancialName, officerFinancialEmail, officerFinancialPhone,
-    #                           officerLegalName, officerLegalEmail, officerLegalPhone,
-    #                           officerTiName, officerTiEmail, officerTiPhone,
-    #                           bank, agency, agencyDigit, currentAccount, currentAccountDigit)
-    #
+
+    # check Magazine Luiza
+    if row['Magazine Luiza'] == 'Pronto para iniciar cadastro':
+        displayName = row['Nome Fantasia']
+        platform = row['Plataforma']
+        cnpj = row['CNPJ']
+        companyName = row['Razão Social']
+        tradeName = row['Nome Fantasia']
+        site = row['Site']
+        cep = row['CEP']
+
+        ## by standard: same name by custumer
+        officerCommercialName = row['Cliente Nome']
+        officerCommercialEmail = row['Cliente Email']
+        officerCommercialPhone = row['Cliente Telefone']
+        officerSacName = row['Cliente Nome']
+        officerSacEmail = row['Cliente Email']
+        officerSacPhone = row['Cliente Telefone']
+        officerFinancialName = row['Cliente Nome']
+        officerFinancialEmail = row['Cliente Email']
+        officerFinancialPhone = row['Cliente Telefone']
+        officerLegalName = row['Cliente Nome']
+        officerLegalEmail = row['Cliente Email']
+        officerLegalPhone = row['Cliente Telefone']
+        ## not required: responsavelTi = False
+        officerTiName = None
+        officerTiEmail = None
+        officerTiPhone = None
+
+        bank = row['Banco']
+        agency = row['Agencia']
+        agencyDigit = row['Digito Agencia']
+        currentAccount = row['Conta Corrente']
+        currentAccountDigit = row['Digito Conta Corrente']
+
+        magazineLuizaRegister(displayName, platform, cnpj, companyName, tradeName, site, cep,
+                              officerCommercialName, officerCommercialEmail, officerCommercialPhone,
+                              officerSacName, officerSacEmail, officerSacPhone,
+                              officerFinancialName, officerFinancialEmail, officerFinancialPhone,
+                              officerLegalName, officerLegalEmail, officerLegalPhone,
+                              officerTiName, officerTiEmail, officerTiPhone,
+                              bank, agency, agencyDigit, currentAccount, currentAccountDigit)
+
     # if row['Carrefour'] == 'Pronto para iniciar cadastro':
     #     cnpj = row['CNPJ']
     #     customerFirstName = row['Cliente Nome']
@@ -124,17 +125,27 @@ for index, row in dfCustomer.iterrows():
     #     tradeName = row['Nome Fantasia']
     #     cnpj = row['CNPJ']
     #     site = row['Site']
+    ##### qual email? tribo ou cliente
     #     loginEmail = row['Tribo Email']
     #     phone = row['Cliente Telefone']
     #
     #     madeiraMadeiraRegister(customerName, tradeName, cnpj, site, loginEmail, phone)
+    #
+    # if row['Dafiti'] == 'Pronto para iniciar cadastro':
+    #     customerFirstName = row['Cliente Nome']
+    #     companyName = row['Razão Social']
+    #     cnpj = row['CNPJ']
+    #     site = row['Site']
+    #     loginEmail = row['Tribo Email']
+    #     phone = row['Cliente Telefone']
+    #
+    #     dafitiRegister(companyName, customerFirstName, cnpj, site, loginEmail, phone)
 
-    if row['Dafiti'] == 'Pronto para iniciar cadastro':
-        customerFirstName = row['Cliente Nome']
+    if row['Netshoes'] == 'Pronto para iniciar cadastro':
         companyName = row['Razão Social']
         cnpj = row['CNPJ']
+        address = row['Endereço']
         site = row['Site']
-        loginEmail = row['Tribo Email']
         phone = row['Cliente Telefone']
 
-        dafitiRegister(companyName, customerFirstName, cnpj, site, loginEmail, phone)
+        netshoesRegister(companyName, cnpj, address, site)
